@@ -79,8 +79,8 @@ interface ILangCode {
 interface ICaptionParseRes {
     caption_list: {
         text: string;         // 자막 텍스트
-        duration_ms: number;   // 지속 시간(ms)
-        start_at_ms: number;   // 시작 시간(ms)
+        duration_ms: number | null;   // 지속 시간(ms)
+        start_at_ms: number | null;   // 시작 시간(ms)
     }[];
     rawText: string;         // 전체 자막 텍스트
 }

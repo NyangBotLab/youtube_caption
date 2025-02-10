@@ -86,6 +86,7 @@ var YoutubeModule = (function () {
         return YoutubeModule.getAvailableCaptionList(this.id, (_a = this.includes_translate) !== null && _a !== void 0 ? _a : includes_translate);
     };
     YoutubeModule.getCaption = function (url) {
+        var _a, _b, _c;
         try {
             var p = org.jsoup.Jsoup.connect(url + '&fmt=json3')
                 .userAgent(constant_1.YoutubeHeader['User-Agent'])
@@ -96,16 +97,18 @@ var YoutubeModule = (function () {
             var commentComponents = JSON.parse(p);
             var returnRes = { caption_list: [], rawText: '' };
             var textList = [];
-            for (var _i = 0, _a = commentComponents.events; _i < _a.length; _i++) {
-                var i = _a[_i];
-                for (var _b = 0, _c = i.segs; _b < _c.length; _b++) {
-                    var j = _c[_b];
-                    returnRes.caption_list.push({
-                        duration_ms: i.dDurationMs,
-                        start_at_ms: i.tStartMs,
-                        text: j.utf8,
-                    });
-                    textList.push(j.utf8);
+            for (var _i = 0, _d = commentComponents.events; _i < _d.length; _i++) {
+                var i = _d[_i];
+                if (Array.isArray(i.segs)) {
+                    for (var _e = 0, _f = i.segs; _e < _f.length; _e++) {
+                        var j = _f[_e];
+                        returnRes.caption_list.push({
+                            duration_ms: (_a = i.dDurationMs) !== null && _a !== void 0 ? _a : null,
+                            start_at_ms: (_b = i.tStartMs) !== null && _b !== void 0 ? _b : null,
+                            text: (_c = j.utf8) !== null && _c !== void 0 ? _c : '',
+                        });
+                        textList.push(j.utf8);
+                    }
                 }
             }
             returnRes.rawText = textList.join('\n\n');

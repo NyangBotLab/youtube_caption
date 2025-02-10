@@ -1,6 +1,6 @@
 {
   "name": "youtube_sub_kakao",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "devDependencies": {
     "typescript": "^5.2.2"
   },
