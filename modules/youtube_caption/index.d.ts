@@ -6,7 +6,7 @@ export declare class YoutubeModule {
     constructor(id: string, includes_translate?: boolean);
     static getAvailableCaptionList(id: string, includes_translate?: boolean): ICaptionListRes;
     getAvailableCaptionList(includes_translate?: boolean): ICaptionListRes;
-    private static getComment;
-    static getCommentByUrl(url: string): ICaptionParseRes;
-    static getCommentByJson(json: ICaptionUrl): ICaptionParseRes;
+    private static getCaption;
+    static getCaptionByUrl(url: string): ICaptionParseRes;
+    static getCaptionByJson(json: ICaptionUrl): ICaptionParseRes;
 }

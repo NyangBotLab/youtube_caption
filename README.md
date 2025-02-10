@@ -33,10 +33,10 @@ const captionList = youtube.getAvailableCaptionList();
 ### 자막 가져오기
 ```javascript
 // url로 자막 가져오기
-const caption = YoutubeModule.getCommentByUrl('CAPTION_URL');
+const caption = YoutubeModule.getCaptionByUrl('CAPTION_URL');
 
 // getAvailableCaptionList 결과값(ICaptionUrl) 중 하나로 자막 가져오기
-const caption = YoutubeModule.getCommentByJson(captionUrlObject);
+const caption = YoutubeModule.getCaptionByJson(captionUrlObject);
 ```
 
 ## 응답 타입
@@ -79,8 +79,8 @@ interface ILangCode {
 interface ICaptionParseRes {
     caption_list: {
         text: string;         // 자막 텍스트
-        durationMs: number;   // 지속 시간(ms)
-        startsAtMs: number;   // 시작 시간(ms)
+        duration_ms: number;   // 지속 시간(ms)
+        start_at_ms: number;   // 시작 시간(ms)
     }[];
     rawText: string;         // 전체 자막 텍스트
 }

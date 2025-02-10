@@ -85,7 +85,7 @@ var YoutubeModule = (function () {
         if (includes_translate === void 0) { includes_translate = false; }
         return YoutubeModule.getAvailableCaptionList(this.id, (_a = this.includes_translate) !== null && _a !== void 0 ? _a : includes_translate);
     };
-    YoutubeModule.getComment = function (url) {
+    YoutubeModule.getCaption = function (url) {
         try {
             var p = org.jsoup.Jsoup.connect(url + '&fmt=json3')
                 .userAgent(constant_1.YoutubeHeader['User-Agent'])
@@ -101,8 +101,8 @@ var YoutubeModule = (function () {
                 for (var _b = 0, _c = i.segs; _b < _c.length; _b++) {
                     var j = _c[_b];
                     returnRes.caption_list.push({
-                        durationMs: i.dDurationMs,
-                        startsAtMs: i.tStartMs,
+                        duration_ms: i.dDurationMs,
+                        start_at_ms: i.tStartMs,
                         text: j.utf8,
                     });
                     textList.push(j.utf8);
@@ -115,14 +115,14 @@ var YoutubeModule = (function () {
             throw new Error('유효하지 않은 자막 주소입니다.');
         }
     };
-    YoutubeModule.getCommentByUrl = function (url) {
-        return YoutubeModule.getComment(url);
+    YoutubeModule.getCaptionByUrl = function (url) {
+        return YoutubeModule.getCaption(url);
     };
-    YoutubeModule.getCommentByJson = function (json) {
+    YoutubeModule.getCaptionByJson = function (json) {
         if (!(0, validator_1.check_json)(json)) {
             throw new Error('json구조가 올바르지 않습니다.');
         }
-        return YoutubeModule.getComment(json.url);
+        return YoutubeModule.getCaption(json.url);
     };
     return YoutubeModule;
 }());
