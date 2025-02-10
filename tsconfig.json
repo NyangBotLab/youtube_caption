@@ -1,0 +1,41 @@
+{
+  "compilerOptions": {
+    "lib": [
+      "es6",
+      "es2017",
+      "es2021",
+      "dom"
+    ],
+    "module": "CommonJS",
+    "resolveJsonModule": true,
+    "checkJs": false,
+    "removeComments": true,
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "node",
+    "strict": true,
+    "target": "es5",
+    "outDir": "modules",
+    "rootDir": "lib",
+    "declaration": true,
+    "allowJs": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "strictPropertyInitialization": false,
+    "typeRoots": [
+      "lib/android",
+      "node_modules/@types",
+      "dist/types"
+
+    ],
+    "strictNullChecks": true
+  },
+  "exclude": [
+    "node_modules",
+    "dist"
+  ],
+  "include": [
+    "lib/**/*"
+  ]
+}

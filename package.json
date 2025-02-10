@@ -1,0 +1,10 @@
+{
+  "name": "youtube_sub_kakao",
+  "version": "1.0.0",
+  "devDependencies": {
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+  },
+  "types": "modules/types/lib/index.d.ts"
+}
