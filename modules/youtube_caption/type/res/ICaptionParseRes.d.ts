@@ -4,5 +4,5 @@ export interface ICaptionParseRes {
         duration_ms: number | null;
         start_at_ms: number | null;
     }[];
-    rawText: string;
+    raw_text: string;
 }

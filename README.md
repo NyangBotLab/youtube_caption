@@ -82,7 +82,7 @@ interface ICaptionParseRes {
         duration_ms: number | null;   // 지속 시간(ms)
         start_at_ms: number | null;   // 시작 시간(ms)
     }[];
-    rawText: string;         // 전체 자막 텍스트
+    raw_text: string;         // 전체 자막 텍스트
 }
 ```
 
